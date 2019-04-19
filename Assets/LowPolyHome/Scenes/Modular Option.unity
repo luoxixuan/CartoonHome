@@ -88,7 +88,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: edb810603f4ff344b8912577c33ee361,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -293,6 +294,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1625714740598288, guid: fc621abedd78b7544a0035be2e2a06bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4912679277367092, guid: fc621abedd78b7544a0035be2e2a06bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -325,20 +330,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1625714740598288, guid: fc621abedd78b7544a0035be2e2a06bf, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 33473257889493984, guid: fc621abedd78b7544a0035be2e2a06bf,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: 1da1d1bd87f476b448830e77e10b7180, type: 3}
     - target: {fileID: 23908252940916274, guid: fc621abedd78b7544a0035be2e2a06bf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b07858dd05b41d54a9f67ff31d26eccf, type: 2}
+    - target: {fileID: 33473257889493984, guid: fc621abedd78b7544a0035be2e2a06bf,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 1da1d1bd87f476b448830e77e10b7180, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc621abedd78b7544a0035be2e2a06bf, type: 3}
 --- !u!1 &1538745076
