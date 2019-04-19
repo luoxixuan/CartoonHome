@@ -1,0 +1,8 @@
+Hello and thank you for purchasing Low Poly Home package.
+
+There is 315 prefabs. All models use one atlas texture.
+For the example scenes the lighting is set to baked.
+
+Texture is 512*512 png
+
+Update 1.1 / More modular walls and floors added
