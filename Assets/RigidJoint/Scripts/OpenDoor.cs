@@ -54,30 +54,7 @@ public class OpenDoor : MonoBehaviour
 
         m_hingeJoint.motor = m_motor;
         m_hingeJoint.useMotor = true;
-
-        //StartCoroutine("DragObject", hit.distance);
     }
-
-
-    private IEnumerator DragObject(float distance)
-    {
-        var oldDrag = m_hingeJoint.connectedBody.drag;
-        var oldAngularDrag = m_hingeJoint.connectedBody.angularDrag;
-        var mainCamera = FindCamera();
-        while (Input.GetMouseButton(0))
-        {
-            var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            m_hingeJoint.transform.position = ray.GetPoint(distance);
-            yield return null;
-        }
-        if (m_hingeJoint.connectedBody)
-        {
-            m_hingeJoint.connectedBody.drag = oldDrag;
-            m_hingeJoint.connectedBody.angularDrag = oldAngularDrag;
-            m_hingeJoint.connectedBody = null;
-        }
-    }
-
 
     private Camera FindCamera()
     {
