@@ -32,142 +32,22 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-/Assets/Cinemachine/Timeline/LegacyTimelineAPI.unitypackage.meta
-Assets/LowPolyHome/Scenes/All Models/LightingData.asset
-Assets/LowPolyHome/Scenes/All Models/LightingData.asset.meta
-Assets/LowPolyHome/Scenes/All Models/ReflectionProbe-0.exr
-Assets/LowPolyHome/Scenes/All Models/ReflectionProbe-0.exr.meta
-Assets/LowPolyHome/Scenes/Bathroom Scene/LightingData.asset
-Assets/LowPolyHome/Scenes/Bathroom Scene/LightingData.asset.meta
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-0_comp_dir.png
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-0_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-0_comp_light.exr
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-0_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-1_comp_dir.png
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-1_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-1_comp_light.exr
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-1_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-2_comp_dir.png
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-2_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-2_comp_light.exr
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-2_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-3_comp_dir.png
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-3_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-3_comp_light.exr
-Assets/LowPolyHome/Scenes/Bathroom Scene/Lightmap-3_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Bathroom Scene/ReflectionProbe-0.exr
-Assets/LowPolyHome/Scenes/Bathroom Scene/ReflectionProbe-0.exr.meta
-Assets/LowPolyHome/Scenes/Bedroom Scene/LightingData.asset
-Assets/LowPolyHome/Scenes/Bedroom Scene/LightingData.asset.meta
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-0_comp_dir.png
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-0_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-0_comp_light.exr
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-0_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-1_comp_dir.png
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-1_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-1_comp_light.exr
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-1_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-2_comp_dir.png
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-2_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-2_comp_light.exr
-Assets/LowPolyHome/Scenes/Bedroom Scene/Lightmap-2_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Bedroom Scene/ReflectionProbe-0.exr
-Assets/LowPolyHome/Scenes/Bedroom Scene/ReflectionProbe-0.exr.meta
-Assets/LowPolyHome/Scenes/Kitchen Scene/LightingData.asset
-Assets/LowPolyHome/Scenes/Kitchen Scene/LightingData.asset.meta
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-0_comp_dir.png
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-0_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-0_comp_light.exr
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-0_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-1_comp_dir.png
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-1_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-1_comp_light.exr
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-1_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-2_comp_dir.png
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-2_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-2_comp_light.exr
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-2_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-3_comp_dir.png
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-3_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-3_comp_light.exr
-Assets/LowPolyHome/Scenes/Kitchen Scene/Lightmap-3_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Kitchen Scene/ReflectionProbe-0.exr
-Assets/LowPolyHome/Scenes/Kitchen Scene/ReflectionProbe-0.exr.meta
-Assets/LowPolyHome/Scenes/Living Room Scene/LightingData.asset
-Assets/LowPolyHome/Scenes/Living Room Scene/LightingData.asset.meta
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-0_comp_dir.png
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-0_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-0_comp_light.exr
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-0_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-1_comp_dir.png
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-1_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-1_comp_light.exr
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-1_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-2_comp_dir.png
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-2_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-2_comp_light.exr
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-2_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-3_comp_dir.png
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-3_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-3_comp_light.exr
-Assets/LowPolyHome/Scenes/Living Room Scene/Lightmap-3_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Living Room Scene/ReflectionProbe-0.exr
-Assets/LowPolyHome/Scenes/Living Room Scene/ReflectionProbe-0.exr.meta
-Assets/LowPolyHome/Scenes/Modular Option/LightingData.asset
-Assets/LowPolyHome/Scenes/Modular Option/LightingData.asset.meta
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-0_comp_dir.png
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-0_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-0_comp_light.exr
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-0_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-1_comp_dir.png
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-1_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-1_comp_light.exr
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-1_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-2_comp_dir.png
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-2_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-2_comp_light.exr
-Assets/LowPolyHome/Scenes/Modular Option/Lightmap-2_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Modular Option/ReflectionProbe-0.exr
-Assets/LowPolyHome/Scenes/Modular Option/ReflectionProbe-0.exr.meta
-Assets/LowPolyHome/Scenes/Multiple Rooms/LightingData.asset
-Assets/LowPolyHome/Scenes/Multiple Rooms/LightingData.asset.meta
-Assets/LowPolyHome/Scenes/Multiple Rooms/Lightmap-0_comp_dir.png
-Assets/LowPolyHome/Scenes/Multiple Rooms/Lightmap-0_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Multiple Rooms/Lightmap-0_comp_light.exr
-Assets/LowPolyHome/Scenes/Multiple Rooms/Lightmap-0_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Multiple Rooms/ReflectionProbe-0.exr
-Assets/LowPolyHome/Scenes/Multiple Rooms/ReflectionProbe-0.exr.meta
-Assets/LowPolyHome/Scenes/Multiple Rooms 2/LightingData.asset
-Assets/LowPolyHome/Scenes/Multiple Rooms 2/LightingData.asset.meta
-Assets/LowPolyHome/Scenes/Multiple Rooms 2/Lightmap-0_comp_dir.png
-Assets/LowPolyHome/Scenes/Multiple Rooms 2/Lightmap-0_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Multiple Rooms 2/Lightmap-0_comp_light.exr
-Assets/LowPolyHome/Scenes/Multiple Rooms 2/Lightmap-0_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Multiple Rooms 2/ReflectionProbe-0.exr
-Assets/LowPolyHome/Scenes/Multiple Rooms 2/ReflectionProbe-0.exr.meta
-Assets/LowPolyHome/Scenes/Work Room Scene/LightingData.asset
-Assets/LowPolyHome/Scenes/Work Room Scene/LightingData.asset.meta
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-0_comp_dir.png
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-0_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-0_comp_light.exr
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-0_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-1_comp_dir.png
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-1_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-1_comp_light.exr
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-1_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-2_comp_dir.png
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-2_comp_dir.png.meta
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-2_comp_light.exr
-Assets/LowPolyHome/Scenes/Work Room Scene/Lightmap-2_comp_light.exr.meta
-Assets/LowPolyHome/Scenes/Work Room Scene/ReflectionProbe-0.exr
-Assets/LowPolyHome/Scenes/Work Room Scene/ReflectionProbe-0.exr.meta
+Assets/LowPolyHome/Scenes/All Models
 Assets/LowPolyHome/Scenes/All Models.meta
+Assets/LowPolyHome/Scenes/Bathroom Scene
 Assets/LowPolyHome/Scenes/Bathroom Scene.meta
+Assets/LowPolyHome/Scenes/Bedroom Scene
 Assets/LowPolyHome/Scenes/Bedroom Scene.meta
+Assets/LowPolyHome/Scenes/Kitchen Scene
 Assets/LowPolyHome/Scenes/Kitchen Scene.meta
+Assets/LowPolyHome/Scenes/Living Room Scene
 Assets/LowPolyHome/Scenes/Living Room Scene.meta
-Assets/LowPolyHome/Scenes/Multiple Rooms 2.meta
+Assets/LowPolyHome/Scenes/Modular Option
+Assets/LowPolyHome/Scenes/Multiple Rooms
 Assets/LowPolyHome/Scenes/Multiple Rooms.meta
+Assets/LowPolyHome/Scenes/Multiple Rooms 2
+Assets/LowPolyHome/Scenes/Multiple Rooms 2.meta
+Assets/LowPolyHome/Scenes/Work Room Scene
 Assets/LowPolyHome/Scenes/Work Room Scene.meta
 Assets/Demo/Scenes/HomeDemo/
 Assets/Demo/Scenes/HomeDemo.meta
