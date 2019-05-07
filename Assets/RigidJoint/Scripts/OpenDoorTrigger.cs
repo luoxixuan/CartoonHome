@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Cartoon.RigidJoint
 {
@@ -28,7 +26,7 @@ namespace Cartoon.RigidJoint
                 //var go = new GameObject("Rigidbody dragger");
                 Rigidbody body = m_door.GetComponent<Rigidbody>();
                 m_hingeJoint = m_door.GetComponent<HingeJoint>();
-                body.isKinematic = false;
+                body.isKinematic = true;
             }
 
             return true;
@@ -38,11 +36,12 @@ namespace Cartoon.RigidJoint
         {
             base.doTrigger(hit);
             // We need to hit a rigidbody that is not kinematic
-            if (!hit.rigidbody || !hit.rigidbody.isKinematic)
+            if (!hit.rigidbody || !hit.rigidbody.isKinematic) //没判断是不是当前物体后续优化
             {
                 return false;
             }
 
+            hit.rigidbody.isKinematic = false;
             m_hingeJoint.motor = m_motor;
             m_hingeJoint.useMotor = true;
 

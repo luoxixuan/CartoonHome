@@ -8,6 +8,7 @@ namespace Cartoon.RigidJoint
         public Camera m_cam;
         // Start is called before the first frame update
 
+        private float maxHitDis = 10.0f;
 
         protected virtual bool doTrigger(RaycastHit hit)
         {
@@ -49,7 +50,7 @@ namespace Cartoon.RigidJoint
             RaycastHit hit = new RaycastHit();
             if (
                 !Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition).origin,
-                                 mainCamera.ScreenPointToRay(Input.mousePosition).direction, out hit, 100,
+                                 mainCamera.ScreenPointToRay(Input.mousePosition).direction, out hit, maxHitDis,
                                  Physics.DefaultRaycastLayers))
             {
                 return;
