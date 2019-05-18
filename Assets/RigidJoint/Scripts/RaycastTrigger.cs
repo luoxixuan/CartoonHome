@@ -4,11 +4,9 @@ namespace Cartoon.RigidJoint
 {
     public class RaycastTrigger : MonoBehaviour
     {
-        public GameObject m_triggerBody; //默认用附加的物体
-        public Camera m_cam;
-        // Start is called before the first frame update
-
-        private float maxHitDis = 10.0f;
+        [SerializeField] private GameObject m_triggerBody; //默认用附加的物体
+        [SerializeField] private Camera m_cam;
+        [Range(0f, 10f)] [SerializeField] float maxHitDis = 10.0f;
 
         protected virtual bool doTrigger(RaycastHit hit)
         {
@@ -52,6 +50,10 @@ namespace Cartoon.RigidJoint
                 !Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition).origin,
                                  mainCamera.ScreenPointToRay(Input.mousePosition).direction, out hit, maxHitDis,
                                  Physics.DefaultRaycastLayers))
+            {
+                return;
+            }
+            if (hit.collider.gameObject.GetInstanceID() != gameObject.GetInstanceID())
             {
                 return;
             }

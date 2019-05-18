@@ -4,10 +4,9 @@ namespace Cartoon.RigidJoint
 {
     public class OpenDoorTrigger : RaycastTrigger
     {
-        public GameObject m_door; //这个门和触发用的物体可以不是一个物体
-        // Start is called before the first frame update
-        public float k_motorForce = 20.0f;
-        public float k_motorVel = -25.0f;
+        [SerializeField] private GameObject m_door; //这个门和触发用的物体可以不是一个物体
+        [SerializeField] private float k_motorForce = 20.0f;
+        [SerializeField] private float k_motorVel = -25.0f;
 
         private HingeJoint m_hingeJoint;
         private JointMotor m_motor = new JointMotor();
@@ -41,7 +40,7 @@ namespace Cartoon.RigidJoint
                 return false;
             }
 
-            hit.rigidbody.isKinematic = false;
+            m_door.GetComponent<Rigidbody>().isKinematic = false;
             m_hingeJoint.motor = m_motor;
             m_hingeJoint.useMotor = true;
 

@@ -69,7 +69,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 
 			ScaleCapsuleForCrouching(crouch);
-			PreventStandingInLowHeadroom();
+			PreventStandingInLowHeadroom(); //检测有点问题，关掉
 
 			// send input and other state parameters to the animator
 			UpdateAnimator(move);
@@ -88,8 +88,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			else
 			{
 				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
-				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
-				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+				float crouchRayLength = (m_CapsuleHeight - m_Capsule.radius * k_Half) * transform.localScale.y;
+				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half * transform.localScale.y, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 				{
 					m_Crouching = true;
 					return;
@@ -106,8 +106,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (!m_Crouching)
 			{
 				Ray crouchRay = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * k_Half, Vector3.up);
-				float crouchRayLength = m_CapsuleHeight - m_Capsule.radius * k_Half;
-				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+				float crouchRayLength = (m_CapsuleHeight - m_Capsule.radius * k_Half) * transform.localScale.y;
+				if (Physics.SphereCast(crouchRay, m_Capsule.radius * k_Half * transform.localScale.y, crouchRayLength, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 				{
 					m_Crouching = true;
 				}
