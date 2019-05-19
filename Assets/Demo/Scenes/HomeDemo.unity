@@ -5122,6 +5122,7 @@ GameObject:
   - component: {fileID: 1402527113}
   - component: {fileID: 1402527116}
   - component: {fileID: 1402527115}
+  - component: {fileID: 1402527117}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -5256,9 +5257,7 @@ MonoBehaviour:
   m_triggerBody: {fileID: 1402527109}
   m_cam: {fileID: 158005181}
   maxHitDis: 3
-  m_door: {fileID: 1402527109}
-  k_motorForce: 20
-  k_motorVel: -25
+  m_doorController: {fileID: 0}
 --- !u!65 &1402527116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5272,6 +5271,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05000001, y: 1.25, z: 0.70000017}
   m_Center: {x: 0, y: 0, z: 0.000000014901161}
+--- !u!114 &1402527117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402527109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215c341b4528c9e488dd73afcdf4c2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  k_motorForce: 20
+  k_motorVel: -25
 --- !u!1 &1405575905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1970755379681444, guid: 90aa269af1e108f409bed32a140b42d5,
@@ -7467,6 +7480,7 @@ GameObject:
   - component: {fileID: 1801587044}
   - component: {fileID: 1801587046}
   - component: {fileID: 1801587047}
+  - component: {fileID: 1801587048}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -7614,7 +7628,19 @@ MonoBehaviour:
   m_triggerBody: {fileID: 1801587040}
   m_cam: {fileID: 158005181}
   maxHitDis: 3
-  m_door: {fileID: 1801587040}
+  m_doorController: {fileID: 0}
+--- !u!114 &1801587048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801587040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215c341b4528c9e488dd73afcdf4c2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   k_motorForce: 20
   k_motorVel: 25
 --- !u!1 &1812137275 stripped
@@ -8319,6 +8345,7 @@ GameObject:
   - component: {fileID: 2017711116}
   - component: {fileID: 2017711115}
   - component: {fileID: 2017711118}
+  - component: {fileID: 2017711119}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -8466,7 +8493,19 @@ MonoBehaviour:
   m_triggerBody: {fileID: 2017711111}
   m_cam: {fileID: 158005181}
   maxHitDis: 1
-  m_door: {fileID: 2017711111}
+  m_doorController: {fileID: 0}
+--- !u!114 &2017711119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017711111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215c341b4528c9e488dd73afcdf4c2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   k_motorForce: 20
   k_motorVel: 25
 --- !u!1 &2028911332 stripped
