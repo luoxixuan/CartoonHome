@@ -35,7 +35,7 @@ namespace Cartoon.RigidJoint
                 {
                     gameObject.BroadcastMessage("DisableGuide");
                     //m_ringGuide.SetActive(false);
-                    sceneManager.OnDoorOpen(doorName);
+                    //sceneManager.OnDoorOpen(doorName);
                 }
             }
             else

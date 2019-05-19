@@ -4,8 +4,9 @@ namespace Cartoon.HomeDemo
 {
     public class RingGuide : MonoBehaviour
     {
-        private bool m_enabled = false;
+        [SerializeField]
         private string guideName = "";
+        private bool m_enabled = false;
         private SceneManager sceneManager;
         // Start is called before the first frame update
         void Start()
@@ -13,8 +14,10 @@ namespace Cartoon.HomeDemo
             //DisableGuide();
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Animator>().enabled = false;
-
-            guideName = transform.parent.gameObject.name;
+            if ("" == guideName)
+            {
+                guideName = transform.parent.gameObject.name;
+            }
             sceneManager = GameObject.Find("SceneManager").GetComponent<SceneManager>();
         }
 
