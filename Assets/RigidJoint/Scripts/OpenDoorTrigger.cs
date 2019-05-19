@@ -10,6 +10,7 @@ namespace Cartoon.RigidJoint
 
         private HingeJoint m_hingeJoint;
         private JointMotor m_motor = new JointMotor();
+        private JointMotor m_closeMotor = new JointMotor();
 
         protected override bool init()
         {
@@ -20,6 +21,8 @@ namespace Cartoon.RigidJoint
 
             m_motor.targetVelocity = k_motorVel;
             m_motor.force = k_motorForce;
+            m_closeMotor.targetVelocity = -k_motorVel;
+            m_closeMotor.force = -k_motorForce;
             if (!m_hingeJoint)
             {
                 //var go = new GameObject("Rigidbody dragger");
