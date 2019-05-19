@@ -6,7 +6,7 @@ namespace Cartoon.RigidJoint
     {
         // Start is called before the first frame update
         [SerializeField]
-        private float k_motorForce = 20.0f;
+        private float k_motorForce = 2200.0f;
         [SerializeField]
         private float k_motorVel = -25.0f;
 
@@ -15,20 +15,27 @@ namespace Cartoon.RigidJoint
         private JointMotor m_closeMotor = new JointMotor();
         private bool m_closed = true;
 
-        public void open()
+        public void Open()
         {
+            GetComponent<Rigidbody>().isKinematic = false;
+
             m_hingeJoint.motor = m_motor;
 
             m_hingeJoint.useMotor = true;
             m_closed = !m_closed;
         }
 
-        public void close()
+        public void Close()
         {
             m_hingeJoint.motor = m_closeMotor;
 
             m_hingeJoint.useMotor = true;
             m_closed = !m_closed;
+        }
+
+        public void SetKinematic(bool value)
+        {
+            GetComponent<Rigidbody>().isKinematic = value;
         }
 
         private void Start()
@@ -38,7 +45,7 @@ namespace Cartoon.RigidJoint
             m_closeMotor.targetVelocity = -k_motorVel;
             m_closeMotor.force = k_motorForce;
             m_hingeJoint = gameObject.GetComponent<HingeJoint>();
-
+            GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 }

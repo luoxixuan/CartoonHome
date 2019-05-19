@@ -32,7 +32,7 @@ namespace UnityStandardAssets.Utility
 
             if (triggerCount == 0 || repeatTrigger)
             {
-                Object currentTarget = target ?? gameObject;
+                Object currentTarget = target ? target : gameObject;
                 Behaviour targetBehaviour = currentTarget as Behaviour;
                 GameObject targetGameObject = currentTarget as GameObject;
                 if (targetBehaviour != null)

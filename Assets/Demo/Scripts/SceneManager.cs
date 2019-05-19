@@ -1,15 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Cartoon.HomeDemo
 {
     public enum GameState
     {
-        start = 0,
-        bedroom = 1,
-        girl = 2,
-        bathroom = 3,
-        cat = 4,
+        start       = 0,
+        bed,
+        clock,
+        bedroom,
+        girl,
+        bathroom,
+        dust,
+        night,
     };
     public enum SkyState
     {
@@ -27,6 +31,8 @@ namespace Cartoon.HomeDemo
         private GameObject m_bedgirl;
         [SerializeField]
         private GameObject m_cat;
+        [SerializeField]
+        private GameObject m_FieldCams;
         [SerializeField]
         private GameObject m_bathroomCam;
         [SerializeField]
@@ -46,6 +52,12 @@ namespace Cartoon.HomeDemo
                 case GameState.start:
                     StartState();
                     break;
+                case GameState.bed:
+                    BedState();
+                    break;
+                case GameState.clock:
+                    ClockState();
+                    break;
                 case GameState.bedroom:
                     BedroomtState();
                     break;
@@ -55,8 +67,11 @@ namespace Cartoon.HomeDemo
                 case GameState.bathroom:
                     BathroomState();
                     break;
-                case GameState.cat:
-                    CatState();
+                case GameState.dust:
+                    DustState();
+                    break;
+                case GameState.night:
+                    NightState();
                     break;
                 default:
                     break;
@@ -72,12 +87,62 @@ namespace Cartoon.HomeDemo
             }
         }
 
+        public void DisableGameObjectGuide(string name)
+        {
+            GameObject obj = GameObject.Find(name);
+            if (obj != null)
+            {
+                obj.BroadcastMessage("DisableGuide");
+            }
+        }
+        public void EnableGameObjectGuide(string name)
+        {
+            GameObject obj = GameObject.Find(name);
+            if (obj != null)
+            {
+                obj.BroadcastMessage("EnableGuide");
+            }
+        }
+
         public void OnDoorOpen(string doorName)
         {
             if (doorName == "DoorHouse")
             {
-                SwitchState(GameState.cat);
-                SetSkyBox(SkyState.dust);
+                //SwitchState(GameState.dust);
+                Debug.Log("SceneManager DoorHouse OnDoorOpen");
+            }
+            else if (doorName == "DoorBedroom")
+            {
+                //SwitchState(GameState.bedroom);
+                Debug.Log("SceneManager DoorBedroom OnDoorOpen");
+            }
+            else if (doorName == "DoorBathroom")
+            {
+                //SwitchState(GameState.bathroom);
+                Debug.Log("SceneManager DoorBathroom OnDoorOpen");
+            }
+        }
+        public void OnGuideCompleted(string guideName)
+        {
+            if (guideName == "Clock")
+            {
+                Debug.Log("SceneManager Clock OnGuideCompleted");
+                SwitchState(GameState.clock);
+            }
+            else if (guideName == "DoorHouse")
+            {
+                Debug.Log("SceneManager DoorHouse OnGuideCompleted");
+                SwitchState(GameState.dust);
+            }
+            else if (guideName == "DoorBedroom")
+            {
+                Debug.Log("SceneManager DoorBedroom OnGuideCompleted");
+                SwitchState(GameState.bedroom);
+            }
+            else if (guideName == "DoorBathroom")
+            {
+                Debug.Log("SceneManager DoorBathroom OnGuideCompleted");
+                SwitchState(GameState.bathroom);
             }
         }
 
@@ -90,50 +155,68 @@ namespace Cartoon.HomeDemo
 #region private
         private void Start()
         {
+            DisableAll();
             SwitchState(GameState.start);
         }
         private void StartState()
         {
-            SwitchState(GameState.bedroom);
+            EnableGameObjectGuide("Clock");
+            SwitchState(GameState.bed);
         }
 
+        private void BedState()
+        {
+            DisableAll();
+            m_bedgirl.SetActive(true);
+            //DisableAll();
+            //DisableGameObjectGuide("Clock");
+            //EnableGameObjectGuide("DoorBedroom");
+        }
+        private void ClockState()
+        {
+            DisableGameObjectGuide("Clock");
+            EnableGameObjectGuide("DoorBedroom");
+        }
         private void BedroomtState()
         {
-            m_girl.SetActive(false);
-            m_bathroomCam.SetActive(false);
-            m_cat.SetActive(false);
-
-            m_bedgirl.SetActive(true);
-            m_bedroomCam.SetActive(true);
+            DisableGameObjectGuide("DoorBedroom");
+            EnableGameObjectGuide("DoorBathroom");
         }
         private void GirlState()
         {
-            m_bedroomCam.SetActive(false);
-            m_bathroomCam.SetActive(false);
-            m_cat.SetActive(false);
-            m_bedgirl.SetActive(false);
-
+            DisableAll();
             m_girl.SetActive(true);
         }
         private void BathroomState()
         {
-            m_girl.SetActive(false);
-            m_bedroomCam.SetActive(false);
-            m_cat.SetActive(false);
-            m_bedgirl.SetActive(false);
-
+            DisableAll();
             m_bathroomCam.SetActive(true);
+            DisableGameObjectGuide("DoorBathroom");
+            EnableGameObjectGuide("DoorHouse");
         }
-        private void CatState()
+        private void DustState()
         {
-            m_girl.SetActive(false);
-            m_bathroomCam.SetActive(false);
-            m_bedroomCam.SetActive(false);
-            m_bedgirl.SetActive(false);
-
-            TriggerObject("Doorhouse");
+            DisableAll();
+            TriggerObject("DoorHouse");
             m_cat.SetActive(true);
+            SetSkyBox(SkyState.dust);
+
+            DisableGameObjectGuide("DoorHouse");
         }
-#endregion
+        private void NightState()
+        {
+            DisableAll();
+            m_cat.SetActive(true);
+            SetSkyBox(SkyState.night);
+        }
+
+        private void DisableAll()
+        {
+            //m_FieldCams.SetActive(false);
+            m_girl.SetActive(false);
+            m_bedgirl.SetActive(false);
+            m_cat.SetActive(false);
+        }
+        #endregion
     }
 }

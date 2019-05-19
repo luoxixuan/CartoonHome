@@ -5,7 +5,6 @@ namespace Cartoon.RigidJoint
     public class OpenDoorTrigger : RaycastTrigger
     {
         private DoorController m_doorController;
-
         private bool m_closed = true;
         private string doorName = "Door";
         private HomeDemo.SceneManager sceneManager;
@@ -31,15 +30,17 @@ namespace Cartoon.RigidJoint
 
             if (m_closed)
             {
-                m_doorController.open();
+                m_doorController.Open();
                 if (sceneManager)
                 {
+                    gameObject.BroadcastMessage("DisableGuide");
+                    //m_ringGuide.SetActive(false);
                     sceneManager.OnDoorOpen(doorName);
                 }
             }
             else
             {
-                m_doorController.close();
+                m_doorController.Close();
             }
             m_closed = !m_closed;
 

@@ -8,6 +8,8 @@ namespace Cartoon.RigidJoint
         private GameObject m_triggerBody; //默认用附加的物体
         [SerializeField]
         private Camera m_cam;
+        [SerializeField]
+        private string m_triggerFunc = "";
         [Range(0f, 10f)] [SerializeField]
         float maxHitDis = 10.0f;
 
@@ -23,11 +25,6 @@ namespace Cartoon.RigidJoint
             if (!m_triggerBody)
             {
                 m_triggerBody = gameObject;
-            }
-            var rigidbody = m_triggerBody.GetComponent<Rigidbody>();
-            if (!rigidbody)
-            {
-                m_triggerBody.AddComponent<Rigidbody>();
             }
             return true;
         }
@@ -62,11 +59,16 @@ namespace Cartoon.RigidJoint
             }
 
             doTrigger(hit);
+            if ("" != m_triggerFunc)
+            {
+                BroadcastMessage(m_triggerFunc);
+            }
         }
 
         private Camera FindCamera()
         {
-            return m_cam;
+            //return m_cam;
+            return m_cam ? m_cam : Camera.main;
         }
     }
 }
