@@ -1097,7 +1097,7 @@ GameObject:
   - component: {fileID: 278862889}
   - component: {fileID: 278862890}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1129,6 +1129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0832f8a8a744f7d4599786a717408709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_girl: {fileID: 1385529225}
+  m_cat: {fileID: 575030804}
+  m_bathroomCam: {fileID: 1150011515}
+  m_bedroomCam: {fileID: 1931753643}
 --- !u!1 &278932126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,6 +2079,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 967724288}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &575030805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575030804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8634e062924929664361c08745211fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: 2
+  target: {fileID: 0}
+  source: {fileID: 0}
+  triggerCount: 1
+  repeatTrigger: 0
+  triggerFunc: DoActivateTrigger
 --- !u!95 &575030810
 Animator:
   serializedVersion: 3
@@ -5123,6 +5145,7 @@ GameObject:
   - component: {fileID: 1402527116}
   - component: {fileID: 1402527115}
   - component: {fileID: 1402527117}
+  - component: {fileID: 1402527118}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -5256,8 +5279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_triggerBody: {fileID: 1402527109}
   m_cam: {fileID: 158005181}
-  maxHitDis: 3
-  m_doorController: {fileID: 0}
+  maxHitDis: 1
 --- !u!65 &1402527116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5285,6 +5307,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   k_motorForce: 20
   k_motorVel: -25
+--- !u!114 &1402527118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402527109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8634e062924929664361c08745211fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: 0
+  target: {fileID: 0}
+  source: {fileID: 0}
+  triggerCount: 1
+  repeatTrigger: 1
+  triggerFunc: close
 --- !u!1 &1405575905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1970755379681444, guid: 90aa269af1e108f409bed32a140b42d5,
@@ -7627,8 +7667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_triggerBody: {fileID: 1801587040}
   m_cam: {fileID: 158005181}
-  maxHitDis: 3
-  m_doorController: {fileID: 0}
+  maxHitDis: 1
 --- !u!114 &1801587048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8168,7 +8207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1948792559}
   m_Layer: 0
-  m_Name: Doorhouse
+  m_Name: DoorHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8493,7 +8532,6 @@ MonoBehaviour:
   m_triggerBody: {fileID: 2017711111}
   m_cam: {fileID: 158005181}
   maxHitDis: 1
-  m_doorController: {fileID: 0}
 --- !u!114 &2017711119
 MonoBehaviour:
   m_ObjectHideFlags: 0

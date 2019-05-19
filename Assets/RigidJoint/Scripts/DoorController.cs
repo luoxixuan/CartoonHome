@@ -5,8 +5,10 @@ namespace Cartoon.RigidJoint
     public class DoorController : MonoBehaviour
     {
         // Start is called before the first frame update
-        [SerializeField] private float k_motorForce = 20.0f;
-        [SerializeField] private float k_motorVel = -25.0f;
+        [SerializeField]
+        private float k_motorForce = 20.0f;
+        [SerializeField]
+        private float k_motorVel = -25.0f;
 
         private HingeJoint m_hingeJoint;
         private JointMotor m_motor = new JointMotor();

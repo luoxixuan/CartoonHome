@@ -23,6 +23,7 @@ namespace UnityStandardAssets.Utility
         public GameObject source;
         public int triggerCount = 1;
         public bool repeatTrigger = false;
+        public string triggerFunc = "DoActivateTrigger";
 
 
         private void DoActivateTrigger()
@@ -44,7 +45,7 @@ namespace UnityStandardAssets.Utility
                     case Mode.Trigger:
                         if (targetGameObject != null)
                         {
-                            targetGameObject.BroadcastMessage("DoActivateTrigger");
+                            targetGameObject.BroadcastMessage(triggerFunc);
                         }
                         break;
                     case Mode.Replace:

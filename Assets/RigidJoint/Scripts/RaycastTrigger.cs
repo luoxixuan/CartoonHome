@@ -4,9 +4,12 @@ namespace Cartoon.RigidJoint
 {
     public class RaycastTrigger : MonoBehaviour
     {
-        [SerializeField] private GameObject m_triggerBody; //默认用附加的物体
-        [SerializeField] private Camera m_cam;
-        [Range(0f, 10f)] [SerializeField] float maxHitDis = 10.0f;
+        [SerializeField]
+        private GameObject m_triggerBody; //默认用附加的物体
+        [SerializeField]
+        private Camera m_cam;
+        [Range(0f, 10f)] [SerializeField]
+        float maxHitDis = 10.0f;
 
         protected virtual bool doTrigger(RaycastHit hit)
         {

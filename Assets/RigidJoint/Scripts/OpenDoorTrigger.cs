@@ -7,6 +7,8 @@ namespace Cartoon.RigidJoint
         private DoorController m_doorController;
 
         private bool m_closed = true;
+        private string doorName = "Door";
+        private HomeDemo.SceneManager sceneManager;
 
         protected override bool init()
         {
@@ -16,6 +18,9 @@ namespace Cartoon.RigidJoint
             }
 
             m_doorController = gameObject.GetComponent<DoorController>();
+
+            sceneManager = GameObject.Find("SceneManager").GetComponent<HomeDemo.SceneManager>();
+            doorName = transform.parent.gameObject.name;
 
             return true;
         }
@@ -27,6 +32,10 @@ namespace Cartoon.RigidJoint
             if (m_closed)
             {
                 m_doorController.open();
+                if (sceneManager)
+                {
+                    sceneManager.OnDoorOpen(doorName);
+                }
             }
             else
             {
