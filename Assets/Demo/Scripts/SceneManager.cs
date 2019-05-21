@@ -78,30 +78,35 @@ namespace Cartoon.HomeDemo
             }
         }
 
-        public void TriggerObject(string name)
+        public void BroadcastMsgToObj(string name, string func)
         {
             GameObject obj = GameObject.Find(name);
             if (obj != null)
             {
-                obj.BroadcastMessage("DoActivateTrigger");
+                obj.BroadcastMessage(func);
             }
+        }
+
+        public void TriggerObject(string name)
+        {
+            BroadcastMsgToObj(name, "DoActivateTrigger");
         }
 
         public void DisableGameObjectGuide(string name)
         {
-            GameObject obj = GameObject.Find(name);
-            if (obj != null)
-            {
-                obj.BroadcastMessage("DisableGuide");
-            }
+            BroadcastMsgToObj(name, "DisableGuide");
         }
         public void EnableGameObjectGuide(string name)
         {
-            GameObject obj = GameObject.Find(name);
-            if (obj != null)
-            {
-                obj.BroadcastMessage("EnableGuide");
-            }
+            BroadcastMsgToObj(name, "EnableGuide");
+        }
+        public void CloseDoor(string name)
+        {
+            BroadcastMsgToObj(name, "Close");
+        }
+        public void OpenDoor(string name)
+        {
+            BroadcastMsgToObj(name, "Open");
         }
 
         public void OnDoorOpen(string doorName)
@@ -193,6 +198,8 @@ namespace Cartoon.HomeDemo
             m_bathroomCam.SetActive(true);
             DisableGameObjectGuide("DoorBathroom");
             EnableGameObjectGuide("DoorHouse");
+
+            CloseDoor("DoorBathroom");
         }
         private void DustState()
         {
