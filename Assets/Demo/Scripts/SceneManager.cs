@@ -86,6 +86,14 @@ namespace Cartoon.HomeDemo
                 obj.BroadcastMessage(func);
             }
         }
+        public void SetObjState(string name, bool active)
+        {
+            GameObject obj = GameObject.Find(name);
+            if (obj != null)
+            {
+                obj.SetActive(active);
+            }
+        }
 
         public void TriggerObject(string name)
         {
@@ -134,11 +142,6 @@ namespace Cartoon.HomeDemo
                 Debug.Log("SceneManager Clock OnGuideCompleted");
                 SwitchState(GameState.clock);
             }
-            else if (guideName == "DoorHouse")
-            {
-                Debug.Log("SceneManager DoorHouse OnGuideCompleted");
-                SwitchState(GameState.dust);
-            }
             else if (guideName == "DoorBedroom")
             {
                 Debug.Log("SceneManager DoorBedroom OnGuideCompleted");
@@ -149,8 +152,17 @@ namespace Cartoon.HomeDemo
                 Debug.Log("SceneManager DoorBathroom OnGuideCompleted");
                 SwitchState(GameState.bathroom);
             }
+            else if (guideName == "DoorHouse")
+            {
+                Debug.Log("SceneManager DoorHouse OnGuideCompleted");
+                SwitchState(GameState.dust);
+            }
+            else if (guideName == "Sofa")
+            {
+                Debug.Log("SceneManager DoorBathroom OnGuideCompleted");
+                SwitchState(GameState.night);
+            }
         }
-
         public void SetSkyBox(SkyState state)
         {
             RenderSettings.skybox = m_skyBox[(int)state];
@@ -209,12 +221,14 @@ namespace Cartoon.HomeDemo
             SetSkyBox(SkyState.dust);
 
             DisableGameObjectGuide("DoorHouse");
+            EnableGameObjectGuide("Sofa");
         }
         private void NightState()
         {
             DisableAll();
             m_cat.SetActive(true);
             SetSkyBox(SkyState.night);
+            SetObjState("HouseLights", false);
         }
 
         private void DisableAll()
