@@ -41,9 +41,14 @@ namespace Cartoon.HomeDemo
         private Material[] m_skyBox;
 
         private GameState m_state = GameState.start;
-#endregion
+        #endregion
 
 #region public
+        public void Start()
+        {
+            DisableAll();
+            SwitchState(GameState.start);
+        }
         public void SwitchState(GameState state)
         {
             m_state = state;
@@ -170,11 +175,6 @@ namespace Cartoon.HomeDemo
 #endregion
 
 #region private
-        private void Start()
-        {
-            DisableAll();
-            SwitchState(GameState.start);
-        }
         private void StartState()
         {
             EnableGameObjectGuide("Clock");
