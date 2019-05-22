@@ -35,6 +35,8 @@ namespace Cartoon.HomeDemo
         private Material[] m_skyBox;
         [SerializeField]
         private GameObject[] m_playables;
+        [SerializeField]
+        private bool m_LockCursor = true;                   // Whether the cursor should be hidden and locked.
 
         private GameState m_state = GameState.start;
         #endregion
@@ -90,13 +92,17 @@ namespace Cartoon.HomeDemo
                 obj.SetActive(active);
             }
         }
-        public void EnableObject(string name)
-        {
-            //SetObjState(name, true);
-        }
         public void DisableObject(string name)
         {
             SetObjState(name, false);
+        }
+        public void SetAudio(string name, bool state)
+        {
+            GameObject obj = GameObject.Find(name);
+            if (obj != null)
+            {
+                obj.GetComponent<AudioSource>().enabled = state;
+            }
         }
 
         public void TriggerObject(string name)
@@ -196,7 +202,8 @@ namespace Cartoon.HomeDemo
         {
             Debug.Log("SceneManager BedState");
             DisableAll();
-            //EnableObject("PlayableBedroomCam");
+
+            SetAudio("Clock", true);
             EnableGameObjectGuide("Clock");
             m_playables[0].SetActive(true);
         }
@@ -207,6 +214,7 @@ namespace Cartoon.HomeDemo
             EnableGameObjectGuide("DoorBedroom");
 
             //EnableObject("Kira_A");
+            SetAudio("Clock", false);
             m_girl.SetActive(true);
             DisableObject("Kira_Bed");
             DisableObject("PlayableBedroomCam");
@@ -258,6 +266,17 @@ namespace Cartoon.HomeDemo
             m_girl.SetActive(false);
             m_bedgirl.SetActive(false);
             m_cat.SetActive(false);
+
+            if (m_state != GameState.bed)
+            {
+                Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
+                Cursor.visible = !m_LockCursor;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
         #endregion
     }
