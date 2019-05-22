@@ -32,23 +32,14 @@ namespace Cartoon.HomeDemo
         [SerializeField]
         private GameObject m_cat;
         [SerializeField]
-        private GameObject m_FieldCams;
-        [SerializeField]
-        private GameObject m_bathroomCam;
-        [SerializeField]
-        private GameObject m_bedroomCam;
-        [SerializeField]
         private Material[] m_skyBox;
+        [SerializeField]
+        private GameObject[] m_playables;
 
         private GameState m_state = GameState.start;
         #endregion
 
 #region public
-        public void Start()
-        {
-            DisableAll();
-            SwitchState(GameState.start);
-        }
         public void SwitchState(GameState state)
         {
             m_state = state;
@@ -98,6 +89,14 @@ namespace Cartoon.HomeDemo
             {
                 obj.SetActive(active);
             }
+        }
+        public void EnableObject(string name)
+        {
+            //SetObjState(name, true);
+        }
+        public void DisableObject(string name)
+        {
+            SetObjState(name, false);
         }
 
         public void TriggerObject(string name)
@@ -172,49 +171,71 @@ namespace Cartoon.HomeDemo
         {
             RenderSettings.skybox = m_skyBox[(int)state];
         }
-#endregion
+        #endregion
 
 #region private
+        private void Start()
+        {
+            Debug.Log("SceneManager Start");
+            DisableAll();
+            SwitchState(GameState.start);
+        }
+        private void Awake()
+        {
+            //Debug.Log("SceneManager Awake");
+            //DisableAll();
+            //SwitchState(GameState.start);
+        }
         private void StartState()
         {
-            EnableGameObjectGuide("Clock");
+            Debug.Log("SceneManager StartState");
             SwitchState(GameState.bed);
         }
 
         private void BedState()
         {
+            Debug.Log("SceneManager BedState");
             DisableAll();
-            m_bedgirl.SetActive(true);
-            //DisableAll();
-            //DisableGameObjectGuide("Clock");
-            //EnableGameObjectGuide("DoorBedroom");
+            //EnableObject("PlayableBedroomCam");
+            EnableGameObjectGuide("Clock");
+            m_playables[0].SetActive(true);
         }
         private void ClockState()
         {
+            Debug.Log("SceneManager ClockState");
             DisableGameObjectGuide("Clock");
             EnableGameObjectGuide("DoorBedroom");
+
+            //EnableObject("Kira_A");
+            m_girl.SetActive(true);
+            DisableObject("Kira_Bed");
+            DisableObject("PlayableBedroomCam");
         }
         private void BedroomtState()
         {
+            Debug.Log("SceneManager BedroomtState");
             DisableGameObjectGuide("DoorBedroom");
             EnableGameObjectGuide("DoorBathroom");
         }
         private void GirlState()
         {
+            Debug.Log("SceneManager GirlState");
             DisableAll();
             m_girl.SetActive(true);
         }
         private void BathroomState()
         {
+            Debug.Log("SceneManager BathroomState");
             DisableAll();
-            m_bathroomCam.SetActive(true);
             DisableGameObjectGuide("DoorBathroom");
             EnableGameObjectGuide("DoorHouse");
 
             CloseDoor("DoorBathroom");
+            m_playables[1].SetActive(true);
         }
         private void DustState()
         {
+            Debug.Log("SceneManager DustState");
             DisableAll();
             TriggerObject("DoorHouse");
             m_cat.SetActive(true);
@@ -225,6 +246,7 @@ namespace Cartoon.HomeDemo
         }
         private void NightState()
         {
+            Debug.Log("SceneManager NightState");
             DisableAll();
             m_cat.SetActive(true);
             SetSkyBox(SkyState.night);
@@ -233,7 +255,6 @@ namespace Cartoon.HomeDemo
 
         private void DisableAll()
         {
-            //m_FieldCams.SetActive(false);
             m_girl.SetActive(false);
             m_bedgirl.SetActive(false);
             m_cat.SetActive(false);

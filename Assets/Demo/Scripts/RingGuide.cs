@@ -12,6 +12,10 @@ namespace Cartoon.HomeDemo
         void Start()
         {
             //DisableGuide();
+        }
+
+        private void Awake()
+        {
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Animator>().enabled = false;
             if ("" == guideName)
