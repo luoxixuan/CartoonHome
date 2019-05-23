@@ -33,6 +33,9 @@ namespace Cartoon.HomeDemo
                 GetComponent<Animator>().enabled = true;
                 m_enabled = true;
                 //gameObject.SetActive(true);
+
+                if("Door" == transform.parent.gameObject.name)
+                    transform.parent.gameObject.BroadcastMessage("EnableDoor");
             }
         }
 
@@ -46,6 +49,9 @@ namespace Cartoon.HomeDemo
                 //gameObject.SetActive(false);
 
                 storyBoard.OnGuideCompleted(guideName);
+
+                if ("Door" == transform.parent.gameObject.name)
+                    transform.parent.gameObject.BroadcastMessage("DisableDoor");
             }
         }
     }

@@ -13,6 +13,7 @@ namespace Cartoon.HomeDemo
         bathroom,
         dust,
         night,
+        exit,
     };
     public enum SkyState
     {
@@ -29,6 +30,8 @@ namespace Cartoon.HomeDemo
         [SerializeField]
         private GameObject m_bedgirl;
         [SerializeField]
+        private GameObject m_backgirl;
+        [SerializeField]
         private GameObject m_cat;
         [SerializeField]
         private Material[] m_skyBox;
@@ -43,7 +46,7 @@ namespace Cartoon.HomeDemo
 #region public
         public void Restart()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         public void SwitchState(GameState state)
         {
@@ -73,6 +76,9 @@ namespace Cartoon.HomeDemo
                     break;
                 case GameState.night:
                     NightState();
+                    break;
+                case GameState.exit:
+                    ExitState();
                     break;
                 default:
                     break;
@@ -175,6 +181,11 @@ namespace Cartoon.HomeDemo
                 Debug.Log("SceneManager DoorBathroom OnGuideCompleted");
                 SwitchState(GameState.night);
             }
+            else if (guideName == "Kira_Back")
+            {
+                Debug.Log("SceneManager KiraBack OnGuideCompleted");
+                SwitchState(GameState.exit);
+            }
         }
         public void SetSkyBox(SkyState state)
         {
@@ -195,6 +206,17 @@ namespace Cartoon.HomeDemo
             //DisableAll();
             //SwitchState(GameState.start);
         }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Restart();
+            }
+        }
+        private void ExitGame()
+        {
+            SceneManager.LoadScene(0);
+        }
         private void StartState()
         {
             Debug.Log("SceneManager StartState");
@@ -208,6 +230,7 @@ namespace Cartoon.HomeDemo
 
             SetAudio("BGMAudio", false);
             SetAudio("Clock", true);
+            SetSkyBox(SkyState.daylight);
             EnableGameObjectGuide("Clock");
             m_playables[0].SetActive(true);
         }
@@ -266,6 +289,14 @@ namespace Cartoon.HomeDemo
             m_playables[3].SetActive(true);
             SetSkyBox(SkyState.night);
             SetObjState("HouseLights", false);
+
+            m_backgirl.SetActive(true);
+            EnableGameObjectGuide("Kira_Back");
+        }
+        private void ExitState()
+        {
+            Debug.Log("SceneManager ExitState");
+            ExitGame();
         }
 
         private void DisableAll()

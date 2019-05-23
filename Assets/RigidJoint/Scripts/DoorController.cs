@@ -10,13 +10,24 @@ namespace Cartoon.RigidJoint
         [SerializeField]
         private float k_motorVel = -25.0f;
 
+        private bool m_enabled = false;
         private HingeJoint m_hingeJoint;
         private JointMotor m_motor = new JointMotor();
         private JointMotor m_closeMotor = new JointMotor();
         private bool m_closed = true;
 
+        public void EnableDoor()
+        {
+            m_enabled = true;
+        }
+        public void DisableDoor()
+        {
+            m_enabled = false;
+        }
+
         public void Open()
         {
+            if (!m_enabled) return;
             GetComponent<Rigidbody>().isKinematic = false;
 
             m_hingeJoint.motor = m_motor;
@@ -27,6 +38,7 @@ namespace Cartoon.RigidJoint
 
         public void Close()
         {
+            if (!m_enabled) return;
             m_hingeJoint.motor = m_closeMotor;
 
             m_hingeJoint.useMotor = true;
