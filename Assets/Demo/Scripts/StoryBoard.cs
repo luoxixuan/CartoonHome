@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Cartoon.HomeDemo
 {
@@ -22,7 +21,7 @@ namespace Cartoon.HomeDemo
         night = 2,
     }
 
-    public class SceneManager : MonoBehaviour
+    public class StoryBoard : MonoBehaviour
     {
 #region private
         [SerializeField]
@@ -39,9 +38,13 @@ namespace Cartoon.HomeDemo
         private bool m_LockCursor = true;                   // Whether the cursor should be hidden and locked.
 
         private GameState m_state = GameState.start;
-        #endregion
+#endregion
 
 #region public
+        public void Restart()
+        {
+            SceneManager.LoadScene(0);
+        }
         public void SwitchState(GameState state)
         {
             m_state = state;
@@ -167,7 +170,7 @@ namespace Cartoon.HomeDemo
                 Debug.Log("SceneManager DoorHouse OnGuideCompleted");
                 SwitchState(GameState.dust);
             }
-            else if (guideName == "Sofa")
+            else if (guideName == "GuideSofa")
             {
                 Debug.Log("SceneManager DoorBathroom OnGuideCompleted");
                 SwitchState(GameState.night);
@@ -177,7 +180,7 @@ namespace Cartoon.HomeDemo
         {
             RenderSettings.skybox = m_skyBox[(int)state];
         }
-        #endregion
+#endregion
 
 #region private
         private void Start()
@@ -203,6 +206,7 @@ namespace Cartoon.HomeDemo
             Debug.Log("SceneManager BedState");
             DisableAll();
 
+            SetAudio("BGMAudio", false);
             SetAudio("Clock", true);
             EnableGameObjectGuide("Clock");
             m_playables[0].SetActive(true);
@@ -215,6 +219,7 @@ namespace Cartoon.HomeDemo
 
             //EnableObject("Kira_A");
             SetAudio("Clock", false);
+            SetAudio("BGMAudio", true);
             m_girl.SetActive(true);
             DisableObject("Kira_Bed");
             DisableObject("PlayableBedroomCam");
@@ -246,17 +251,19 @@ namespace Cartoon.HomeDemo
             Debug.Log("SceneManager DustState");
             DisableAll();
             TriggerObject("DoorHouse");
-            m_cat.SetActive(true);
+            //m_cat.SetActive(true);
+            m_playables[2].SetActive(true);
             SetSkyBox(SkyState.dust);
 
             DisableGameObjectGuide("DoorHouse");
-            EnableGameObjectGuide("Sofa");
+            EnableGameObjectGuide("GuideSofa");
         }
         private void NightState()
         {
             Debug.Log("SceneManager NightState");
-            DisableAll();
+            //DisableAll();
             m_cat.SetActive(true);
+            m_playables[3].SetActive(true);
             SetSkyBox(SkyState.night);
             SetObjState("HouseLights", false);
         }

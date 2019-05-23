@@ -6,8 +6,6 @@ namespace Cartoon.RigidJoint
     {
         private DoorController m_doorController;
         private bool m_closed = true;
-        //private string doorName = "Door";
-        private HomeDemo.SceneManager sceneManager;
 
         protected override bool init()
         {
@@ -15,11 +13,7 @@ namespace Cartoon.RigidJoint
             {
                 return false;
             }
-
             m_doorController = gameObject.GetComponent<DoorController>();
-
-            sceneManager = GameObject.Find("SceneManager").GetComponent<HomeDemo.SceneManager>();
-            //doorName = transform.parent.gameObject.name;
 
             return true;
         }
@@ -31,12 +25,7 @@ namespace Cartoon.RigidJoint
             if (m_closed)
             {
                 m_doorController.Open();
-                if (sceneManager)
-                {
-                    gameObject.BroadcastMessage("DisableGuide");
-                    //m_ringGuide.SetActive(false);
-                    //sceneManager.OnDoorOpen(doorName);
-                }
+                gameObject.BroadcastMessage("DisableGuide");
             }
             else
             {

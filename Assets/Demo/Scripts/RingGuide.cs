@@ -7,7 +7,7 @@ namespace Cartoon.HomeDemo
         [SerializeField]
         private string guideName = "";
         private bool m_enabled = false;
-        private SceneManager sceneManager;
+        private StoryBoard storyBoard;
         // Start is called before the first frame update
         void Start()
         {
@@ -22,7 +22,7 @@ namespace Cartoon.HomeDemo
             {
                 guideName = transform.parent.gameObject.name;
             }
-            sceneManager = GameObject.Find("SceneManager").GetComponent<SceneManager>();
+            storyBoard = GameObject.Find("StoryBoard").GetComponent<StoryBoard>();
         }
 
         private void EnableGuide()
@@ -45,7 +45,7 @@ namespace Cartoon.HomeDemo
                 m_enabled = false;
                 //gameObject.SetActive(false);
 
-                sceneManager.OnGuideCompleted(guideName);
+                storyBoard.OnGuideCompleted(guideName);
             }
         }
     }
