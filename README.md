@@ -5,7 +5,7 @@
 
 > 2019.4.9
 
-![too young too simle, sometimes naive](https://github.com/luoxixuan/CartoomHome/blob/master/CartoomHome.png)
+![too young too simle, sometimes naive](CartoomHome.png)
 
 - [ ] **前期技术点预研**
     - [ ] 全屏后处理，黑白，眨眼等效果
