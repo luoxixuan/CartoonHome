@@ -1,11 +1,11 @@
-# CartoonTemple
+# CartoomHome
 > stay simple, stay young
 
 > made by unity 2018.3.10f1
 
 > 2019.4.9
 
-![too young too simle, sometimes naive](https://github.com/luoxixuan/CartoonTemple/blob/master/Temple.png)
+![too young too simle, sometimes naive](https://github.com/luoxixuan/CartoomHome/blob/master/CartoomHome.png)
 
 - [ ] **前期技术点预研**
     - [ ] 全屏后处理，黑白，眨眼等效果
