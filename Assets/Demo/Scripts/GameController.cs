@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using GalGameDialog;
 
 namespace Cartoon.HomeDemo
 {
@@ -36,17 +37,17 @@ namespace Cartoon.HomeDemo
             if (guideName == "Clock")
             {
                 Debug.Log("StoryBoard Clock OnGuideCompleted");
-                m_stateController.SwitchState(GameState.clock);
+                m_stateController.SwitchState(GameState.clockclosed);
             }
             else if (guideName == "DoorBedroom")
             {
                 Debug.Log("StoryBoard DoorBedroom OnGuideCompleted");
-                m_stateController.SwitchState(GameState.bedroom);
+                m_stateController.SwitchState(GameState.doorbedroomopened);
             }
             else if (guideName == "DoorBathroom")
             {
                 Debug.Log("StoryBoard DoorBathroom OnGuideCompleted");
-                m_stateController.SwitchState(GameState.bathroom);
+                m_stateController.SwitchState(GameState.doorbathroomopened);
             }
             else if (guideName == "DoorHouse")
             {

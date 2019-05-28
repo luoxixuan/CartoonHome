@@ -1,0 +1,124 @@
+[
+{
+	"DialogID":1,
+    "DialogName": "bed",
+    "DialogArr": [
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“喵”"
+        },
+		{
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“喵”"
+        },
+		{
+            "Name": "提示",
+            "IconPath": "Sprites/clock",
+            "DialogText": "闹钟响了，该起床了，关掉闹钟起床吧"
+        }
+    ]
+},
+{
+	"DialogID":2,
+    "DialogName": "clockclosed",
+    "DialogArr": [
+		{
+            "Name": "提示",
+            "IconPath": "Sprites/clock",
+            "DialogText": "你终于起来了，打开房门去客厅吧"
+        }
+    ]
+},
+{
+	"DialogID":3,
+    "DialogName": "doorbedroomopened",
+    "DialogArr": [
+        {
+            "Name": "提示",
+            "IconPath": "Sprites/clock",
+            "DialogText": "打开浴室的门去洗漱吧"
+        }
+    ]
+},
+{
+	"DialogID":4,
+    "DialogName": "doorbathroomopened",
+    "DialogArr": [
+        {
+            "Name": "提示",
+            "IconPath": "Sprites/clock",
+            "DialogText": "“哗啦啦哗啦啦”（洗漱中）"
+        },
+		{
+            "Name": "提示",
+            "IconPath": "Sprites/clock",
+            "DialogText": "“哗啦啦哗啦啦”（洗漱中）"
+        },
+        {
+            "Name": "提示",
+            "IconPath": "Sprites/clock",
+            "DialogText": "该去工作了，打开大门出去吧"
+        }
+    ]
+},
+{
+	"DialogID":5,
+    "DialogName": "dust",
+    "DialogArr": [
+		{
+            "Name": "提示",
+            "IconPath": "Sprites/cat",
+            "DialogText": "你去工作了"
+        },
+		{
+            "Name": "提示",
+            "IconPath": "Sprites/cat",
+            "DialogText": "你去工作了"
+        },
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“喵”（主人出门了吗？出门去沙发上玩一会吧）"
+        }
+    ]
+},
+{
+	"DialogID":6,
+    "DialogName": "night",
+    "DialogArr": [
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“喵”（困了，睡一会吧）"
+        },
+		{
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“喵”（困了，睡一会吧）"
+        },
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“喵喵”（脚步声，是主人回来了吗）"
+        },
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“喵喵”（去门口看看吧）"
+        }
+    ]
+},
+{
+	"DialogID":7,
+    "DialogName": "exit",
+    "DialogArr": [
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“喵喵”（蹭腿中）"
+        }
+    ]
+}
+]

@@ -1,0 +1,166 @@
+[
+{
+	"DialogID":1,
+    "DialogName": "钟表对话",
+    "DialogArr": [
+        {
+            "Name": "我",
+            "IconPath": "Sprites/head",
+            "DialogText": "除了提醒时间，好像别无他用"
+        }
+    ]
+},
+{
+	"DialogID":2,
+    "DialogName": "书柜获得钥匙对话",
+    "DialogArr": [
+        {
+            "Name": "我",
+            "IconPath": "Sprites/head",
+            "DialogText": "书架有点乱，整理一下吧"
+        },
+        {
+            "Name": "我",
+            "IconPath": "Sprites/head",
+            "DialogText": "获得【钥匙】"
+        }
+    ]
+},
+{
+	"DialogID":3,
+    "DialogName": "床头柜没钥匙对话",
+    "DialogArr": [
+        {
+            "Name": "我",
+            "IconPath": "Sprites/head",
+            "DialogText": "好像需要一把钥匙"
+        }
+    ]
+},
+{
+	"DialogID":4,
+    "DialogName": "床头柜有钥匙获得翻译机对话",
+    "DialogArr": [
+        {
+            "Name": "我",
+            "IconPath": "Sprites/head",
+            "DialogText": "开启并获得【翻译机】"
+        }
+    ]
+},
+{
+	"DialogID":5,
+    "DialogName": "照片没照片碎片对话",
+    "DialogArr": [
+        {
+            "Name": "我",
+            "IconPath": "Sprites/head",
+            "DialogText": "上面好像缺了什么"
+        }
+    ]
+},
+{
+	"DialogID":6,
+    "DialogName": "照片有照片碎片对话",
+    "DialogArr": [
+        {
+            "Name": "我",
+            "IconPath": "Sprites/head",
+            "DialogText": "照片向上移。露出【怀表】"
+        }
+    ]
+},
+{
+	"DialogID":7,
+    "DialogName": "花瓶获得照片碎片对话",
+    "DialogArr": [
+        {
+            "Name": "我",
+            "IconPath": "Sprites/head",
+            "DialogText": "解开花瓶纹路上的谜题，获得【照片碎片*1】"
+        }
+    ]
+},
+{
+	"DialogID":8,
+    "DialogName": "血迹对话",
+    "DialogArr": [
+        {
+            "Name": "我",
+            "IconPath": "Sprites/head",
+            "DialogText": "“好像暗示了什么。”"
+        }
+    ]
+},
+{
+	"DialogID":9,
+    "DialogName": "黑猫没有翻译机对话",
+    "DialogArr": [
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“喵……喵……”（暂时还听不懂它的话。）"
+        }
+    ]
+},
+{
+    "DialogID":10,
+    "DialogName": "有翻译机没碎片对话",
+    "DialogArr": [
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“你已经死掉了哦，如果找到怀表给我。”"
+        },
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“或许我会给你一次重来的机会”"
+        },
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "黑猫移开，露出【照片碎片*1】"
+        }
+
+    ]
+},
+{
+	"DialogID":11,
+    "DialogName": "有怀表和翻译机对话",
+    "DialogArr": [
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“我会送你到三小时以前”"
+        },
+        {
+            "Name": "黑猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "“给你重来一次的机会”"
+        },
+        {
+            "Name": "猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "这游戏的试玩到此结束了哦。"
+        },
+        {
+            "Name": "猫",
+            "IconPath": "Sprites/cat",
+            "DialogText": "请期待我们的后续噢。"
+        }
+
+    ]
+},
+{
+    "DialogID":12,
+    "DialogName": "床底获得照片碎片对话",
+    "DialogArr": [
+        {
+            "Name": "我",
+            "IconPath": "Sprites/head",
+            "DialogText": "获得【照片碎片*1】"
+        }
+    ]
+}
+]

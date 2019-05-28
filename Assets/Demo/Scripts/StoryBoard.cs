@@ -1,19 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using GalGameDialog;
 
 namespace Cartoon.HomeDemo
 {
     public enum GameState
     {
         start       = 0,
-        bed,
-        clock,
-        bedroom,
-        girl,
-        bathroom,
-        dust,
-        night,
-        exit,
+        bed,                //在床上,要点闹钟
+        clockclosed,        //点完闹钟起来了,要开房门
+        doorbedroomopened,  //开了房门,要开浴室门
+        doorbathroomopened, //开了浴室门,洗漱完,准备出门了
+        dust,       //开大门出去了，变黄昏并切到猫视角
+        night,      //跳到了沙发上，天黑了，主人回来了
+        exit,       //跑去主人那
     };
     public enum SkyState
     {
@@ -24,7 +25,7 @@ namespace Cartoon.HomeDemo
 
     public class StoryBoard : MonoBehaviour
     {
-#region Modify On Editor
+        #region Modify On Editor
         [SerializeField]
         private GameObject m_girl;
         [SerializeField]
@@ -39,51 +40,41 @@ namespace Cartoon.HomeDemo
         private GameObject[] m_playables;
         [SerializeField]
         private bool m_LockCursor = true;                   // Whether the cursor should be hidden and locked.
-#endregion
+        #endregion
 
-#region Private Value
+        #region Private Value
         private GameState m_state = GameState.start;
-#endregion
 
-#region Interface
+        private delegate void StateHandler();
+        private StateHandler[] StateExecutors;
+        #endregion
+
+        #region Interface
         // 目前只能按顺序切换
         public void SwitchState(GameState state)
         {
             m_state = state;
-            switch (m_state)
-            {
-                case GameState.start:
-                    StartState();
-                    break;
-                case GameState.bed:
-                    BedState();
-                    break;
-                case GameState.clock:
-                    ClockState();
-                    break;
-                case GameState.bedroom:
-                    BedroomtState();
-                    break;
-                case GameState.girl:
-                    GirlState();
-                    break;
-                case GameState.bathroom:
-                    BathroomState();
-                    break;
-                case GameState.dust:
-                    DustState();
-                    break;
-                case GameState.night:
-                    NightState();
-                    break;
-                case GameState.exit:
-                    ExitState();
-                    break;
-                default:
-                    break;
-            }
+            PlayDialogByState();
+            StateExecutors[(int)state]();
         }
-        public void DisableAll()
+        #endregion
+        private void Awake()
+        {
+            StateExecutors = new StateHandler[]
+            {
+                StartState,
+                BedState,
+                ClockClosedState,
+                GoToBathroomState,
+                ReadyToGoState,
+                DustState,
+                NightState,
+                ExitState,
+            };
+        }
+
+        #region Utility
+        private void DisableAll()
         {
             m_girl.SetActive(false);
             m_bedgirl.SetActive(false);
@@ -100,9 +91,12 @@ namespace Cartoon.HomeDemo
                 Cursor.visible = true;
             }
         }
-#endregion
+        private void PlayDialogByState(GameState dialogState = 0)
+        {
+            dialogState = (dialogState == 0) ? m_state : dialogState;
+            DialogManage.instance.StartDialogByID((int)dialogState);
+        }
 
-#region Utility
         private void BroadcastMsgToObj(string name, string func)
         {
             GameObject obj = GameObject.Find(name);
@@ -160,7 +154,7 @@ namespace Cartoon.HomeDemo
         }
 #endregion
 
-#region StateExecutor
+        #region StateExecutor
         private void ExitGame()
         {
             SceneManager.LoadScene("Start");
@@ -183,9 +177,9 @@ namespace Cartoon.HomeDemo
             EnableGameObjectGuide("Clock");
             m_playables[0].SetActive(true);
         }
-        private void ClockState()
+        private void ClockClosedState()
         {
-            Debug.Log("GameStateController ClockState");
+            Debug.Log("GameStateController ClockClosedState");
             DisableGameObjectGuide("Clock");
             EnableGameObjectGuide("DoorBedroom");
 
@@ -196,21 +190,15 @@ namespace Cartoon.HomeDemo
             DisableObject("Kira_Bed");
             DisableObject("PlayableBedroomCam");
         }
-        private void BedroomtState()
+        private void GoToBathroomState()
         {
-            Debug.Log("GameStateController BedroomtState");
+            Debug.Log("GameStateController GoToBathroomState");
             DisableGameObjectGuide("DoorBedroom");
             EnableGameObjectGuide("DoorBathroom");
         }
-        private void GirlState()
+        private void ReadyToGoState()
         {
-            Debug.Log("GameStateController GirlState");
-            DisableAll();
-            m_girl.SetActive(true);
-        }
-        private void BathroomState()
-        {
-            Debug.Log("GameStateController BathroomState");
+            Debug.Log("GameStateController ReadyToGoState");
             DisableAll();
             DisableGameObjectGuide("DoorBathroom");
             EnableGameObjectGuide("DoorHouse");
@@ -245,8 +233,14 @@ namespace Cartoon.HomeDemo
         private void ExitState()
         {
             Debug.Log("GameStateController ExitState");
+            StartCoroutine(WaitExitGame());
+            //ExitGame();
+        }
+        IEnumerator WaitExitGame()
+        {
+            yield return new WaitForSeconds(1.0f);
             ExitGame();
         }
-#endregion
+        #endregion
     }
 }
