@@ -446,6 +446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 29524829}
   - component: {fileID: 29524830}
+  - component: {fileID: 29524831}
   m_Layer: 0
   m_Name: StoryBoard
   m_TagString: Untagged
@@ -483,12 +484,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0832f8a8a744f7d4599786a717408709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &29524831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29524828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaa135aa265c2d46a50b47846b50378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_girl: {fileID: 1385529225}
   m_bedgirl: {fileID: 1805615837}
   m_backgirl: {fileID: 790035613}
   m_cat: {fileID: 575030804}
   m_skyBox:
-  - {fileID: 2100000, guid: 95d7ef3e88f73544b907e839a2c5ca58, type: 2}
+  - {fileID: 2100000, guid: e10774d8486e00f43862f9b31e4619e7, type: 2}
   - {fileID: 2100000, guid: cd8147e9e7856fa42bafb113df2df30c, type: 2}
   - {fileID: 2100000, guid: 721904b668a79dc4d95d8c5c7852b30c, type: 2}
   m_playables:

@@ -18,6 +18,6 @@ public class StartScene : MonoBehaviour
 
     public void EnterGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("HomeDemo");
     }
 }
