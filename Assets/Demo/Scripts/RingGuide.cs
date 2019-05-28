@@ -7,7 +7,7 @@ namespace Cartoon.HomeDemo
         [SerializeField]
         private string guideName = "";
         private bool m_enabled = false;
-        private StoryBoard storyBoard;
+        private GameController storyBoard;
         // Start is called before the first frame update
         void Start()
         {
@@ -22,7 +22,7 @@ namespace Cartoon.HomeDemo
             {
                 guideName = transform.parent.gameObject.name;
             }
-            storyBoard = GameObject.Find("StoryBoard").GetComponent<StoryBoard>();
+            storyBoard = GameObject.Find("StoryBoard").GetComponent<GameController>();
         }
 
         private void EnableGuide()
